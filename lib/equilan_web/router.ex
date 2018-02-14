@@ -9,5 +9,6 @@ defmodule EquilanWeb.Router do
     pipe_through :api
 
     resources "/session", SessionController, only: [:index]
+    resources "/user", UserController, only: [:index, :show]
   end
 end
