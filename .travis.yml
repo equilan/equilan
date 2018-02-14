@@ -1,0 +1,13 @@
+language: elixir
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database equilan_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: Dku3d+xdYBI7kmW+3JBSlAOUo2jnQ5PRx8vyVqeJVmEqyN4Co1r+0z8RvC+eCWfICJGMebqjR1TJUlL+k4EOLGPPBgwkez6s7N+NPvsXMf1dR9FBI4qbpYODxJ6v8SDk4BMUoldVf1+cBpUnJY43YVx58Yfb+YTPySvRYzgbnlXOS46fWgAobJCoB7jKRwtQ3t8D0EXMiDsql8icAn48bjaVdcU+sJYWBKSFc3aATlb9iCHzqh+3hvcnbTKB8q0KbL/Nlw6s8Eqx6D0hkZA8JoC8vIG3VooHRCOwlq8p3EviTuxK/DTupndTClkMrWk38AqPTLdFAF2GO+hP2VDkb9oiDmXam7ZDag6jPScQYU2sJ10gLT5bld5acB+OEKo8svE5xztjNS/ASQ//236U8PNAjJ1KYC7Lf/veTdfS8XJoePWLAERBu0IWoEugsROmb64iZm+YAuo98D27fMQ/c/nlddaCl5W70cm0CRutekiO7qWIkfpHueAcLeoRaSKxHCb0zu0VZON+/rIdZEiQ2D+tCfjxTW3okDE4k/FXPYaNi/tKhsqgVgCfiSQID17xk/iyu0UKARO7K6Ws9SnqqAT7vm+2OfwS4PrM2lbs3DaY47vUM/IyTMLRXN8eVgdnWl9ZVi5psqglKRayqlG3NT561y47+dsOzwzfqXEPdE0=
+  app: equilan
+  on:
+    repo: equilan/equilan
